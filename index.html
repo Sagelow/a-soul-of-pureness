@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="A magical Electro constellation created especially for Celine.">
+  <meta name="theme-color" content="#1d102b">
+
+  <title>Celine — Your Constellation</title>
+
+  <!--
+    Personal, non-commercial fan-made project.
+    The constellation, interface, ornaments, and fox linework are original.
+
+    The opening background is an original CSS Electro starfield inspired by
+    Genshin-style constellation screens. No official background asset is used.
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#c0">Skip to Celine's constellation</a>
+
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__nebula ambient__nebula--rose"></div>
+    <div class="ambient__nebula ambient__nebula--violet"></div>
+    <div class="particle-field" data-particles="24"></div>
+    <div class="sakura-field" data-petals="14"></div>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <!-- C1-C6 follow a celestial crescent and are mirrored as interactive
+       nodes inside the central fox constellation. -->
+  <nav class="constellation-rail crescent-nav" aria-label="Constellation navigation" aria-hidden="true">
+    <svg class="crescent-nav__orbit" viewBox="0 0 260 640" aria-hidden="true">
+      <defs>
+        <linearGradient id="crescentLine" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ffd6e8" stop-opacity=".1"/>
+          <stop offset=".48" stop-color="#c9a7ff" stop-opacity=".72"/>
+          <stop offset="1" stop-color="#8f5cff" stop-opacity=".12"/>
+        </linearGradient>
+        <filter id="crescentGlow" x="-80%" y="-20%" width="260%" height="140%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <path class="crescent-nav__aura" d="M225 24C95 108 32 236 51 365c17 118 75 205 178 251"/>
+      <path class="crescent-nav__line" d="M178 47C111 114 68 211 63 311c-5 108 31 210 99 283" filter="url(#crescentGlow)"/>
+      <path class="crescent-nav__ornament" d="M216 40c-22 2-37-7-46-27M222 602c-23-2-39 7-49 25"/>
+    </svg>
+    <span class="crescent-nav__caption" aria-hidden="true">Constellations</span>
+
+    <a href="#c1" data-constellation="1" class="crescent-node crescent-node--1">
+      <span class="rail-star"><i></i><img src="assets/Constellations/Constellation_Yakan_Offering.webp" alt=""></span>
+      <span class="rail-copy"><small>C1 · Electro Energy</small><strong>Yakan Offering</strong></span>
+    </a>
+    <a href="#c2" data-constellation="2" class="crescent-node crescent-node--2">
+      <span class="rail-star"><i></i><img src="assets/Constellations/Constellation_Foxs_Mooncall.webp" alt=""></span>
+      <span class="rail-copy"><small>C2 · Your Art</small><strong>Fox's Mooncall</strong></span>
+    </a>
+    <a href="#c3" data-constellation="3" class="crescent-node crescent-node--3">
+      <span class="rail-star"><i></i><img src="assets/Constellations/Constellation_The_Seven_Glamours.webp" alt=""></span>
+      <span class="rail-copy"><small>C3</small><strong>The Seven Glamours</strong></span>
+    </a>
+    <a href="#c4" data-constellation="4" class="crescent-node crescent-node--4">
+      <span class="rail-star"><i></i><img src="assets/Constellations/Constellation_Sakura_Channeling.webp" alt=""></span>
+      <span class="rail-copy"><small>C4 · Your Qualities</small><strong>Sakura Channeling</strong></span>
+    </a>
+    <a href="#c5" data-constellation="5" class="crescent-node crescent-node--5">
+      <span class="rail-star"><i></i><img src="assets/Constellations/Constellation_Mischievous_Teasing.webp" alt=""></span>
+      <span class="rail-copy"><small>C5 · Inspirations</small><strong>Mischievous Teasing</strong></span>
+    </a>
+    <a href="#c6" data-constellation="6" class="crescent-node crescent-node--6">
+      <span class="rail-star"><i></i><img src="assets/Constellations/Constellation_Forbidden_Art_Daisesshou.webp" alt=""></span>
+      <span class="rail-copy"><small>C6 · Final Wish</small><strong>Forbidden Art: Daisesshou</strong></span>
+    </a>
+  </nav>
+
+  <main>
+    <!-- C0 — CELINE -------------------------------------------------- -->
+    <section class="constellation-section constellation-home" id="c0" data-constellation-section="0">
+      <div class="constellation-home__image" role="img" aria-label="A violet Electro constellation sky with soft nebula light and tiny stars"></div>
+      <div class="constellation-home__veil"></div>
+      <div class="fantasy-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+      <div class="constellation-home__intro reveal">
+        <p class="eyebrow"><span></span> June 29 <span></span></p>
+        <h1>Celine</h1>
+      </div>
+
+      <div class="star-map reveal reveal--delay" data-star-map data-active="0">
+        <div class="fox-constellation-media" role="img" aria-label="Divina Vulpes, a glowing celestial kitsune constellation">
+          <span class="fox-orbit fox-orbit--outer" aria-hidden="true"></span>
+          <span class="fox-orbit fox-orbit--inner" aria-hidden="true"></span>
+          <img class="fox-constellation-image" src="assets/Divina_Vulpes_Shape.webp" alt="">
+
+          <!-- Star coordinates are mapped proportionally from the supplied
+               1080px reference onto the 512px Divina Vulpes WebP. -->
+          <svg class="constellation-points" viewBox="0 0 512 512" aria-label="Six interactive constellation stars connected across the divine fox">
+            <defs>
+              <filter id="constellationPointGlow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="4" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <g class="webp-star-lines" aria-hidden="true">
+              <path d="M322 61 450 209 343 401 247 458 190 299 343 401"/>
+              <path d="M252 180 190 299"/>
+            </g>
+
+            <a href="#c6" class="webp-star-node webp-star-node--6" data-constellation="6" aria-label="C6 - Forbidden Art: Daisesshou">
+              <g class="webp-star-position" transform="translate(322 61)">
+                <g class="webp-star-shine webp-star-shine--small" style="--star-scale:.42; --star-active-scale:.5;">
+                  <circle class="webp-star-aura" r="34"/>
+                  <circle class="webp-star-bloom" r="16"/>
+                  <path class="webp-star-flare webp-star-flare--vertical" d="M0 -38C3 -16 2 -5 0 0C-2 -5 -3 -16 0 -38ZM0 38C3 16 2 5 0 0C-2 5 -3 16 0 38Z"/>
+                  <path class="webp-star-flare webp-star-flare--horizontal" d="M-32 0C-13 -2 -5 -1 0 0C-5 1 -13 2 -32 0ZM32 0C13 -2 5 -1 0 0C5 1 13 2 32 0Z"/>
+                  <path class="webp-star-flare webp-star-flare--diagonal" d="M0 -19C1.6 -8 1.1 -3 0 0C-1.1 -3 -1.6 -8 0 -19ZM0 19C1.6 8 1.1 3 0 0C-1.1 3 -1.6 8 0 19Z" transform="rotate(45)"/>
+                  <path class="webp-star-flare webp-star-flare--diagonal" d="M0 -19C1.6 -8 1.1 -3 0 0C-1.1 -3 -1.6 -8 0 -19ZM0 19C1.6 8 1.1 3 0 0C-1.1 3 -1.6 8 0 19Z" transform="rotate(-45)"/>
+                  <circle class="webp-star-glow-core" r="8.4"/>
+                  <circle class="webp-star-hot-core" r="4.2"/>
+                  <circle class="webp-star-pin" r="1.55"/>
+                </g>
+              </g>
+            </a>
+            <a href="#c1" class="webp-star-node webp-star-node--1" data-constellation="1" aria-label="C1 - Yakan Offering">
+              <g class="webp-star-position" transform="translate(252 180)">
+                <g class="webp-star-shine webp-star-shine--large" style="--star-scale:.82; --star-active-scale:.98;">
+                  <circle class="webp-star-aura" r="36"/>
+                  <circle class="webp-star-bloom" r="18"/>
+                  <path class="webp-star-flare webp-star-flare--vertical" d="M0 -42C3.2 -18 2.2 -6 0 0C-2.2 -6 -3.2 -18 0 -42ZM0 42C3.2 18 2.2 6 0 0C-2.2 6 -3.2 18 0 42Z"/>
+                  <path class="webp-star-flare webp-star-flare--horizontal" d="M-40 0C-16 -2.4 -6 -1.2 0 0C-6 1.2 -16 2.4 -40 0ZM40 0C16 -2.4 6 -1.2 0 0C6 1.2 16 2.4 40 0Z"/>
+                  <path class="webp-star-flare webp-star-flare--diagonal" d="M0 -21C1.8 -9 1.2 -3 0 0C-1.2 -3 -1.8 -9 0 -21ZM0 21C1.8 9 1.2 3 0 0C-1.2 3 -1.8 9 0 21Z" transform="rotate(45)"/>
+                  <path class="webp-star-flare webp-star-flare--diagonal" d="M0 -21C1.8 -9 1.2 -3 0 0C-1.2 -3 -1.8 -9 0 -21ZM0 21C1.8 9 1.2 3 0 0C-1.2 3 -1.8 9 0 21Z" transform="rotate(-45)"/>
+                  <circle class="webp-star-glow-core" r="9"/>
+                  <circle class="webp-star-hot-core" r="4.6"/>
+                  <circle class="webp-star-pin" r="1.7"/>
+                </g>
+              </g>
+            </a>
+            <a href="#c5" class="webp-star-node webp-star-node--5" data-constellation="5" aria-label="C5 - Mischievous Teasing">
+              <g class="webp-star-position" transform="translate(450 209)">
+                <g class="webp-star-shine webp-star-shine--small" style="--star-scale:.4; --star-active-scale:.48;">
+                  <circle class="webp-star-aura" r="33"/>
+                  <circle class="webp-star-bloom" r="15"/>
+                  <path class="webp-star-flare webp-star-flare--vertical" d="M0 -36C2.8 -15 1.8 -5 0 0C-1.8 -5 -2.8 -15 0 -36ZM0 36C2.8 15 1.8 5 0 0C-1.8 5 -2.8 15 0 36Z"/>
+                  <path class="webp-star-flare webp-star-flare--horizontal" d="M-30 0C-12 -1.8 -5 -1 0 0C-5 1 -12 1.8 -30 0ZM30 0C12 -1.8 5 -1 0 0C5 1 12 1.8 30 0Z"/>
+                  <path class="webp-star-flare webp-star-flare--diagonal" d="M0 -18C1.5 -8 1 -3 0 0C-1 -3 -1.5 -8 0 -18ZM0 18C1.5 8 1 3 0 0C-1 3 -1.5 8 0 18Z" transform="rotate(45)"/>
+                  <path class="webp-star-flare webp-star-flare--diagonal" d="M0 -18C1.5 -8 1 -3 0 0C-1 -3 -1.5 -8 0 -18ZM0 18C1.5 8 1 3 0 0C-1 3 -1.5 8 0 18Z" transform="rotate(-45)"/>
+                  <circle class="webp-star-glow-core" r="8"/>
+                  <circle class="webp-star-hot-core" r="4"/>
+                  <circle class="webp-star-pin" r="1.45"/>
+                </g>
+              </g>
+            </a>
+            <a href="#c2" class="webp-star-node webp-star-node--2" data-constellation="2" aria-label="C2 - Fox's Mooncall">
+              <g class="webp-star-position" transform="translate(190 299)">
+                <g class="webp-star-shine webp-star-shine--large" style="--star-scale:.46; --star-active-scale:.55;">
+                  <circle class="webp-star-aura" r="36"/>
+                  <circle class="webp-star-bloom" r="18"/>
+                  <path class="webp-star-flare webp-star-flare--vertical" d="M0 -42C3.2 -18 2.2 -6 0 0C-2.2 -6 -3.2 -18 0 -42ZM0 42C3.2 18 2.2 6 0 0C-2.2 6 -3.2 18 0 42Z"/>
+                  <path class="webp-star-flare webp-star-flare--horizontal" d="M-40 0C-16 -2.4 -6 -1.2 0 0C-6 1.2 -16 2.4 -40 0ZM40 0C16 -2.4 6 -1.2 0 0C6 1.2 16 2.4 40 0Z"/>
+                  <path class="webp-star-flare webp-star-flare--diagonal" d="M0 -22C1.8 -9 1.2 -3 0 0C-1.2 -3 -1.8 -9 0 -22ZM0 22C1.8 9 1.2 3 0 0C-1.2 3 -1.8 9 0 22Z" transform="rotate(45)"/>
+                  <path class="webp-star-flare webp-star-flare--diagonal" d="M0 -22C1.8 -9 1.2 -3 0 0C-1.2 -3 -1.8 -9 0 -22ZM0 22C1.8 9 1.2 3 0 0C-1.2 3 -1.8 9 0 22Z" transform="rotate(-45)"/>
+                  <circle class="webp-star-glow-core" r="9"/>
+                  <circle class="webp-star-hot-core" r="4.6"/>
+                  <circle class="webp-star-pin" r="1.7"/>
+                </g>
+              </g>
+            </a>
+            <a href="#c4" class="webp-star-node webp-star-node--4" data-constellation="4" aria-label="C4 - Sakura Channeling">
+              <g class="webp-star-position" transform="translate(343 401)">
+                <g class="webp-star-shine webp-star-shine--medium" style="--star-scale:.42; --star-active-scale:.5;">
+                  <circle class="webp-star-aura" r="34"/>
+                  <circle class="webp-star-bloom" r="16"/>
+                  <path class="webp-star-flare webp-star-flare--vertical" d="M0 -38C3 -16 2 -5 0 0C-2 -5 -3 -16 0 -38ZM0 38C3 16 2 5 0 0C-2 5 -3 16 0 38Z"/>
+                  <path class="webp-star-flare webp-star-flare--horizontal" d="M-34 0C-13 -2 -5 -1 0 0C-5 1 -13 2 -34 0ZM34 0C13 -2 5 -1 0 0C5 1 13 2 34 0Z"/>
+                  <path class="webp-star-flare webp-star-flare--diagonal" d="M0 -19C1.6 -8 1.1 -3 0 0C-1.1 -3 -1.6 -8 0 -19ZM0 19C1.6 8 1.1 3 0 0C-1.1 3 -1.6 8 0 19Z" transform="rotate(45)"/>
+                  <path class="webp-star-flare webp-star-flare--diagonal" d="M0 -19C1.6 -8 1.1 -3 0 0C-1.1 -3 -1.6 -8 0 -19ZM0 19C1.6 8 1.1 3 0 0C-1.1 3 -1.6 8 0 19Z" transform="rotate(-45)"/>
+                  <circle class="webp-star-glow-core" r="8.4"/>
+                  <circle class="webp-star-hot-core" r="4.2"/>
+                  <circle class="webp-star-pin" r="1.55"/>
+                </g>
+              </g>
+            </a>
+            <a href="#c3" class="webp-star-node webp-star-node--3" data-constellation="3" aria-label="C3 - The Seven Glamours">
+              <g class="webp-star-position" transform="translate(247 458)">
+                <g class="webp-star-shine webp-star-shine--medium" style="--star-scale:.44; --star-active-scale:.52;">
+                  <circle class="webp-star-aura" r="35"/>
+                  <circle class="webp-star-bloom" r="17"/>
+                  <path class="webp-star-flare webp-star-flare--vertical" d="M0 -40C3 -17 2 -5 0 0C-2 -5 -3 -17 0 -40ZM0 40C3 17 2 5 0 0C-2 5 -3 17 0 40Z"/>
+                  <path class="webp-star-flare webp-star-flare--horizontal" d="M-36 0C-14 -2.2 -5 -1 0 0C-5 1 -14 2.2 -36 0ZM36 0C14 -2.2 5 -1 0 0C5 1 14 2.2 36 0Z"/>
+                  <path class="webp-star-flare webp-star-flare--diagonal" d="M0 -20C1.7 -8.5 1.1 -3 0 0C-1.1 -3 -1.7 -8.5 0 -20ZM0 20C1.7 8.5 1.1 3 0 0C-1.1 3 -1.7 8.5 0 20Z" transform="rotate(45)"/>
+                  <path class="webp-star-flare webp-star-flare--diagonal" d="M0 -20C1.7 -8.5 1.1 -3 0 0C-1.1 -3 -1.7 -8.5 0 -20ZM0 20C1.7 8.5 1.1 3 0 0C-1.1 3 -1.7 8.5 0 20Z" transform="rotate(-45)"/>
+                  <circle class="webp-star-glow-core" r="8.6"/>
+                  <circle class="webp-star-hot-core" r="4.4"/>
+                  <circle class="webp-star-pin" r="1.6"/>
+                </g>
+              </g>
+            </a>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- C1 — ELECTRO ENERGY ----------------------------------------- -->
+    <section class="constellation-section light-section energy-section" id="c1" data-constellation-section="1">
+      <div class="section-watermark" aria-hidden="true">C1</div>
+      <div class="section-heading reveal">
+        <p class="constellation-label"><span>C1</span> Electro Energy</p>
+        <h2>Yakan <em>Offering</em></h2>
+        <p>Quiet power does not need to announce itself. Sometimes it simply glows — steady, elegant, and unforgettable.</p>
+      </div>
+
+      <div class="energy-layout">
+        <div class="energy-copy reveal">
+          <p class="opening-copy">Your energy feels like Electro: quiet at first glance, but impossible to ignore once someone truly gets to know you.</p>
+          <p>You carry a kind of inner strength, confidence, and elegance that makes your world feel unique. Your spark is calm rather than stormy — soft in the way it appears, powerful in the way it stays.</p>
+          <div class="soft-quote"><span class="iconify" data-icon="ph:sparkle-fill"></span><p>Quiet on the surface.<br><strong>Electric at heart.</strong></p></div>
+        </div>
+
+        <article class="electro-card reveal reveal--delay">
+          <div class="electro-card__top"><span>Personal Affinity</span><span>Constellation 01</span></div>
+          <div class="electro-emblem" aria-hidden="true">
+            <i></i><i></i>
+            <img src="assets/img/electro.webp" alt="">
+          </div>
+          <div class="electro-card__bottom"><div><small>Element</small><strong>Electro</strong></div><div><small>Nature</small><strong>Quiet Radiance</strong></div></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- C2 — DRAWING ------------------------------------------------ -->
+    <section class="constellation-section light-section art-section" id="c2" data-constellation-section="2">
+      <div class="section-watermark" aria-hidden="true">C2</div>
+      <div class="section-heading section-heading--center reveal">
+        <p class="constellation-label"><span>C2</span> Your Art</p>
+        <h2>Fox's <em>Mooncall</em></h2>
+        <p>When you draw, you do more than place lines on a page. You create something that feels like you: expressive, thoughtful, detailed, and full of life.</p>
+      </div>
+
+      <!-- Replace any .drawing-placeholder with:
+           <img src="assets/img/your-drawing.jpg" alt="A drawing created by Celine"> -->
+      <div class="sketchbook reveal">
+        <div class="sketchbook__rings" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <figure class="drawing-card drawing-card--one">
+          <div class="drawing-placeholder drawing-placeholder--rose"><span class="iconify" data-icon="ph:paint-brush-broad-light"></span><small>Your drawings will shine here.</small></div>
+          <figcaption><b>01</b><span>A detail only you would imagine</span></figcaption>
+        </figure>
+        <figure class="drawing-card drawing-card--two">
+          <div class="drawing-placeholder drawing-placeholder--violet"><span class="iconify" data-icon="ph:flower-lotus-light"></span><small>Your drawings will shine here.</small></div>
+          <figcaption><b>02</b><span>An idea made visible</span></figcaption>
+        </figure>
+        <figure class="drawing-card drawing-card--three">
+          <div class="drawing-placeholder drawing-placeholder--gold"><span class="iconify" data-icon="ph:sparkle-light"></span><small>Your drawings will shine here.</small></div>
+          <figcaption><b>03</b><span>A fragment of your universe</span></figcaption>
+        </figure>
+        <span class="sketch-note sketch-note--one">imagine ✦</span><span class="sketch-note sketch-note--two">then create.</span>
+      </div>
+    </section>
+
+    <!-- C3 — KANJI -------------------------------------------------- -->
+    <section class="constellation-section dark-section kanji-section" id="c3" data-constellation-section="3">
+      <div class="section-watermark" aria-hidden="true">C3</div>
+
+      <div class="kanji-visual reveal" aria-hidden="true">
+        <div class="kanji-card">
+          <span class="kanji-card__symbol">彩</span>
+        </div>
+      </div>
+
+      <div class="kanji-copy reveal reveal--delay">
+        <p class="constellation-label constellation-label--light"><span>C3</span> The Seven Glamours</p>
+        <h2>彩 — <em>Aya / Sai</em></h2>
+        <p class="kanji-subtitle">Color, brilliance, and artistic expression.</p>
+        <p class="opening-copy">This kanji reminds me of you because your creativity gives color to everything around you. Through your drawings, your voice, your confidence and the way you see the world, you leave something vivid and beautiful behind. You do not just exist in a world of colors — you create your own.</p>
+        <div class="kanji-quote"><span class="iconify" data-icon="ph:paint-brush-broad-light"></span><strong>You create your own colors.</strong></div>
+      </div>
+    </section>
+
+    <!-- C4 — QUALITIES ---------------------------------------------- -->
+    <section class="constellation-section light-section qualities-section" id="c4" data-constellation-section="4">
+      <div class="section-watermark" aria-hidden="true">C4</div>
+      <div class="section-heading reveal">
+        <p class="constellation-label"><span>C4</span> What I Admire About You</p>
+        <h2>Sakura <em>Channeling</em></h2>
+        <p>Six qualities, like sakura energy gathered into different points of the same beautiful constellation.</p>
+      </div>
+      <div class="quality-grid">
+        <article class="quality-card reveal"><span class="quality-icon"><span class="iconify" data-icon="ph:paint-brush-broad-light"></span></span><b>01</b><h3>Creative</h3><p>You turn imagination into something people can see and feel.</p></article>
+        <article class="quality-card reveal reveal--delay-1"><span class="quality-icon"><span class="iconify" data-icon="ph:heart-light"></span></span><b>02</b><h3>Caring</h3><p>You may keep your circle small, but you truly care about the people who matter to you.</p></article>
+        <article class="quality-card reveal reveal--delay-2"><span class="quality-icon"><span class="iconify" data-icon="ph:star-four-light"></span></span><b>03</b><h3>Confident</h3><p>You have a presence that feels calm, strong, and sure of itself.</p></article>
+        <article class="quality-card reveal"><span class="quality-icon"><img src="assets/img/electro.webp" alt=""></span><b>04</b><h3>Quietly Strong</h3><p>You do not need to be loud to be unforgettable.</p></article>
+        <article class="quality-card reveal reveal--delay-1"><span class="quality-icon"><span class="iconify" data-icon="ph:book-open-text-light"></span></span><b>05</b><h3>Curious</h3><p>You love learning, growing, and discovering more about the world.</p></article>
+        <article class="quality-card reveal reveal--delay-2"><span class="quality-icon"><span class="iconify" data-icon="ph:flower-lotus-light"></span></span><b>06</b><h3>Loyal</h3><p>When someone matters to you, you make them feel it.</p></article>
+      </div>
+    </section>
+
+    <!-- C5 — INSPIRATIONS ------------------------------------------- -->
+    <section class="constellation-section dark-section inspiration-section" id="c5" data-constellation-section="5">
+      <div class="inspiration-section__image" aria-hidden="true"></div>
+      <div class="inspiration-section__veil"></div>
+      <div class="section-watermark" aria-hidden="true">C5</div>
+      <div class="section-heading reveal">
+        <p class="constellation-label constellation-label--light"><span>C5</span> Your Inspirations</p>
+        <h2>Mischievous <em>Teasing</em></h2>
+        <p>Two different sparks that echo something in you — elegance and mystery on one side, color and fearless expression on the other.</p>
+      </div>
+
+      <div class="muse-grid">
+        <article class="muse-card muse-card--yae reveal">
+          <div class="muse-card__top"><span>Main inspiration</span><span>01</span></div>
+          <div class="muse-card__symbol" aria-hidden="true"><i></i><span class="iconify" data-icon="mingcute:fox-line"></span></div>
+          <h3>Yae Miko</h3>
+          <p>Yae Miko has that calm, elegant, and unforgettable presence. That is the kind of energy I see in your universe too: soft, creative, confident, mysterious, and filled with a beautiful Electro glow.</p>
+          <div class="trait-list"><span>Elegant</span><span>Mysterious</span><span>Confident</span><span>Electro</span><span>Sakura</span><span>Kitsune</span></div>
+        </article>
+        <article class="muse-card muse-card--marin reveal reveal--delay">
+          <div class="muse-card__top"><span>A colorful spark</span><span>02</span></div>
+          <div class="muse-card__symbol" aria-hidden="true"><i></i><span class="iconify" data-icon="ph:sun-horizon-light"></span></div>
+          <h3>Marin Kitagawa</h3>
+          <p>Marin's world is full of color, expression, and confidence. She reminds me of the way you can turn what you love into something bright, personal, and alive.</p>
+          <div class="trait-list"><span>Creative</span><span>Expressive</span><span>Colorful</span><span>Passionate</span><span>Confident</span><span>Girly</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- C6 — FINAL -------------------------------------------------- -->
+    <section class="constellation-section final-section" id="c6" data-constellation-section="6">
+      <div class="final-section__nebula" aria-hidden="true"></div>
+      <div class="section-watermark" aria-hidden="true">C6</div>
+      <div class="final-heading reveal">
+        <p class="constellation-label constellation-label--light"><span>C6</span> Final Constellation</p>
+        <h2>Forbidden Art:<br><em>Daisesshou</em></h2>
+        <p>The last star closes the constellation with a quiet glow before one final letter, kept only for you.</p>
+      </div>
+
+      <div class="final-wish reveal">
+        <span class="final-wish__star" aria-hidden="true"><img src="assets/img/electro.webp" alt=""></span>
+        <p class="thunder-line">Celine, you do not need anyone to strike.<br><em>You are a thunder yourself.</em></p>
+        <h2>Celine, you do not need to shine like everyone else.</h2>
+        <h3>You already have your own light.</h3>
+        <a class="secondary-button" href="#c0" data-constellation="0"><span class="iconify" data-icon="ph:arrow-up"></span><span>Return to the constellation</span></a>
+      </div>
+    </section>
+
+    <!-- PERSONAL LETTER --------------------------------------------- -->
+    <section class="letter-section" aria-label="A personal letter for Celine">
+      <article class="letter-card reveal">
+        <span class="letter-card__corner letter-card__corner--tl"></span><span class="letter-card__corner letter-card__corner--tr"></span>
+        <span class="letter-card__corner letter-card__corner--bl"></span><span class="letter-card__corner letter-card__corner--br"></span>
+        <header><span>A message for you</span><i><span class="iconify" data-icon="ph:flower-lotus-light"></span></i><span>June 29</span></header>
+
+        <!-- Replace the following message directly in the HTML whenever you wish.
+             Placeholder option: “I will write a personal message here, just for you.” -->
+        <div class="letter-message">
+          <p class="letter-dear">Dear Celine,</p>
+          <p>We have been knowing each other for almost 3 years now and I would like to thank you. Thank you for always supporting me. Thank you for still keeping me in your life. I know sometimes you're going through a lot, especially by your own. I acknowledge your problems but I don't want to disturb your secret garden. Nevertheless, I care and think about you a lot. Feel free to message me at any occasion, for whatever reason, I will reply as fast as I can. All I wish is that you fight for the best. I may not say it often but I deeply care about you. You are one of my most precious relation and I hope to always keep in touch with you.<br><br>Happy birthday my little Marin Cosplayer</p>
+          <p class="letter-postscript">This letter will never represent my actual gratitude towards you. May these words brings you joy and hapiness.<br>— Your smile is the prettiest shape on your face.</p>
+        </div>
+        <footer><strong>✦ Sovann</strong></footer>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>Made by Sovann</span><i>✦</i><span>For Celine</span></footer>
+
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js" defer></script>
+  <script src="script.js"></script>
+</body>
+</html>
