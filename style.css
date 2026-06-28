@@ -917,10 +917,10 @@ body.is-unlocking .webp-star-node--1 {
   object-position: center 18%;
   filter: saturate(1.08) contrast(1.03) brightness(1.04) drop-shadow(0 0 10px rgba(255,214,232,.2));
 }
-.muse-card h3 { position: relative; z-index: 2; margin-bottom: 11px; font-family: var(--display); font-size: 2rem; font-weight: 500; line-height: 1; text-align: center; }
-.muse-card > p { position: relative; z-index: 2; min-height: 108px; color: rgba(255,245,250,.68); font-size: .77rem; line-height: 1.62; text-align: center; }
-.trait-list { position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 18px; }
-.trait-list span { padding: 4px 9px; border: 1px solid rgba(255,255,255,.17); border-radius: 99px; font-size: .46rem; letter-spacing: .06em; text-transform: uppercase; }
+.muse-card h3 { position: relative; z-index: 2; margin-bottom: 14px; font-family: var(--display); font-size: 2rem; font-weight: 500; line-height: 1; text-align: center; }
+.muse-card > p { position: relative; z-index: 2; max-width: 540px; margin: 0 auto; color: rgba(255,245,250,.7); font-size: .77rem; line-height: 1.62; text-align: center; }
+.muse-card > p + p { margin-top: 14px; }
+.muse-card__summary { color: rgba(255,214,232,.88); font-family: var(--display); font-size: 1.02rem !important; font-style: italic; line-height: 1.25 !important; }
 
 /* C6 --------------------------------------------------------------- */
 .final-section { padding: clamp(110px,10vh,150px) 250px 115px clamp(58px,5.5vw,90px); color: white; background: radial-gradient(ellipse at 52% 28%,rgba(143,92,255,.42),transparent 34%),radial-gradient(ellipse at 78% 82%,rgba(246,166,200,.16),transparent 34%),linear-gradient(180deg,#6f4a86 0%,#4a2a64 45%,var(--night) 100%); }
