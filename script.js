@@ -6,6 +6,14 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const body = document.body;
+  const countdownGate = document.querySelector("#countdown-gate");
+  const countdownParts = {
+    days: document.querySelector("[data-countdown-days]"),
+    hours: document.querySelector("[data-countdown-hours]"),
+    minutes: document.querySelector("[data-countdown-minutes]"),
+    seconds: document.querySelector("[data-countdown-seconds]")
+  };
   const progressBar = document.querySelector(".scroll-progress span");
   const constellationControls = [...document.querySelectorAll("[data-constellation]")];
   const sections = [...document.querySelectorAll("[data-constellation-section]")];
@@ -13,6 +21,86 @@ document.addEventListener("DOMContentLoaded", () => {
   const crescentNav = document.querySelector(".crescent-nav");
   let activeConstellation = "0";
   let wakeTimer;
+  let isSiteLocked = false;
+  let countdownTimer;
+
+  const getUnlockTarget = () => {
+    const now = new Date();
+    return new Date(now.getFullYear(), 5, 29, 0, 0, 0, 0);
+  };
+
+  const formatCountdownValue = (value) => String(value).padStart(2, "0");
+
+  const updateCountdown = () => {
+    const now = new Date();
+    const target = getUnlockTarget();
+    const remaining = target.getTime() - now.getTime();
+
+    if (remaining <= 0) {
+      unlockSite();
+      return;
+    }
+
+    const totalSeconds = Math.floor(remaining / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    if (countdownParts.days) countdownParts.days.textContent = formatCountdownValue(days);
+    if (countdownParts.hours) countdownParts.hours.textContent = formatCountdownValue(hours);
+    if (countdownParts.minutes) countdownParts.minutes.textContent = formatCountdownValue(minutes);
+    if (countdownParts.seconds) countdownParts.seconds.textContent = formatCountdownValue(seconds);
+  };
+
+  const playAwakeningSequence = () => {
+    if (reducedMotion) return;
+    body.classList.add("is-unlocking");
+    starMap?.classList.add("is-awake");
+  };
+
+  const unlockSite = (instant = false) => {
+    window.clearInterval(countdownTimer);
+    isSiteLocked = false;
+    body.classList.remove("is-gate-pending", "is-locked");
+
+    if (instant || reducedMotion) {
+      body.classList.add("is-unlocked");
+      countdownGate?.setAttribute("aria-hidden", "true");
+      countdownGate?.removeAttribute("aria-modal");
+      updateCrescentNavVisibility();
+      return;
+    }
+
+    playAwakeningSequence();
+    window.setTimeout(() => {
+      body.classList.remove("is-unlocking");
+      body.classList.add("is-unlocked");
+      countdownGate?.setAttribute("aria-hidden", "true");
+      countdownGate?.removeAttribute("aria-modal");
+      updateCrescentNavVisibility();
+    }, 1450);
+    window.setTimeout(() => {
+      starMap?.classList.remove("is-awake");
+    }, 3600);
+  };
+
+  const initCountdownGate = () => {
+    const now = new Date();
+    const target = getUnlockTarget();
+
+    if (now >= target) {
+      unlockSite(true);
+      return;
+    }
+
+    isSiteLocked = true;
+    body.classList.remove("is-gate-pending");
+    body.classList.add("is-locked");
+    setCrescentNavVisibility(false);
+    updateCountdown();
+    countdownTimer = window.setInterval(updateCountdown, 1000);
+  };
 
   /* Stable variation keeps the ambient composition consistent on refresh. */
   const randomFrom = (seed) => {
@@ -86,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const wakeConstellation = () => {
-    if (reducedMotion) return;
+    if (reducedMotion || isSiteLocked) return;
     window.clearTimeout(wakeTimer);
     starMap?.classList.add("is-awake");
     crescentNav?.classList.add("is-awake");
@@ -98,6 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const setCrescentNavVisibility = (shouldShow) => {
     if (!crescentNav) return;
+    if (isSiteLocked) shouldShow = false;
     crescentNav.classList.toggle("is-visible", shouldShow);
     crescentNav.setAttribute("aria-hidden", shouldShow ? "false" : "true");
   };
@@ -106,6 +195,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const firstConstellation = document.querySelector("#c1");
     const letterSection = document.querySelector(".letter-section");
     if (!firstConstellation) return false;
+
+    if (letterSection) {
+      const letterRect = letterSection.getBoundingClientRect();
+      const letterIsEntering = letterRect.top <= window.innerHeight && letterRect.bottom >= 0;
+      if (letterIsEntering) return false;
+    }
 
     const journeyStart = firstConstellation.offsetTop - 16;
     const journeyEnd = letterSection
@@ -142,6 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const scrollToConstellation = (value) => {
+    if (isSiteLocked) return;
     const target = document.querySelector(`#c${value}`);
     if (!target) return;
 
@@ -219,6 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   createParticles();
   if (!reducedMotion) createPetals();
+  initCountdownGate();
   initReveal();
   initConstellationNavigation();
   initTouchCards();

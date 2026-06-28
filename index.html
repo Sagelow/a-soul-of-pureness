@@ -22,8 +22,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="is-gate-pending">
   <a class="skip-link" href="#c0">Skip to Celine's constellation</a>
+
+  <div id="countdown-gate" class="countdown-gate" role="dialog" aria-modal="true" aria-label="Countdown until the constellation opens">
+    <div class="countdown-gate__content">
+      <div class="countdown-timer" aria-live="polite" aria-label="Time remaining before the constellation opens">
+        <span><strong data-countdown-days>00</strong><small>Days</small></span>
+        <span><strong data-countdown-hours>00</strong><small>Hours</small></span>
+        <span><strong data-countdown-minutes>00</strong><small>Minutes</small></span>
+        <span><strong data-countdown-seconds>00</strong><small>Seconds</small></span>
+      </div>
+    </div>
+  </div>
 
   <div class="ambient" aria-hidden="true">
     <div class="ambient__nebula ambient__nebula--rose"></div>
@@ -80,16 +91,22 @@
     </a>
   </nav>
 
-  <main>
+  <main id="site-content" class="site-content">
     <!-- C0 — CELINE -------------------------------------------------- -->
     <section class="constellation-section constellation-home" id="c0" data-constellation-section="0">
       <div class="constellation-home__image" role="img" aria-label="A violet Electro constellation sky with soft nebula light and tiny stars"></div>
       <div class="constellation-home__veil"></div>
       <div class="fantasy-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="birthday-stars" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
 
       <div class="constellation-home__intro reveal">
-        <p class="eyebrow"><span></span> June 29 <span></span></p>
-        <h1>Celine</h1>
+        <h1 class="hero-logo-title" aria-label="Celine">
+          <img src="assets/img/celine-moon-title.png" alt="">
+        </h1>
       </div>
 
       <div class="star-map reveal reveal--delay" data-star-map data-active="0">
@@ -210,22 +227,24 @@
 
     <!-- C1 — ELECTRO ENERGY ----------------------------------------- -->
     <section class="constellation-section light-section energy-section" id="c1" data-constellation-section="1">
-      <div class="section-watermark" aria-hidden="true">C1</div>
       <div class="section-heading reveal">
         <p class="constellation-label"><span>C1</span> Electro Energy</p>
         <h2>Yakan <em>Offering</em></h2>
-        <p>Quiet power does not need to announce itself. Sometimes it simply glows — steady, elegant, and unforgettable.</p>
       </div>
 
       <div class="energy-layout">
         <div class="energy-copy reveal">
           <p class="opening-copy">Your energy feels like Electro: quiet at first glance, but impossible to ignore once someone truly gets to know you.</p>
           <p>You carry a kind of inner strength, confidence, and elegance that makes your world feel unique. Your spark is calm rather than stormy — soft in the way it appears, powerful in the way it stays.</p>
+          <div class="energy-traits" aria-label="Celine's Electro qualities">
+            <span>Quiet spark</span>
+            <span>Confident aura</span>
+            <span>Soft power</span>
+          </div>
           <div class="soft-quote"><span class="iconify" data-icon="ph:sparkle-fill"></span><p>Quiet on the surface.<br><strong>Electric at heart.</strong></p></div>
         </div>
 
         <article class="electro-card reveal reveal--delay">
-          <div class="electro-card__top"><span>Personal Affinity</span><span>Constellation 01</span></div>
           <div class="electro-emblem" aria-hidden="true">
             <i></i><i></i>
             <img src="assets/img/electro.webp" alt="">
@@ -237,11 +256,9 @@
 
     <!-- C2 — DRAWING ------------------------------------------------ -->
     <section class="constellation-section light-section art-section" id="c2" data-constellation-section="2">
-      <div class="section-watermark" aria-hidden="true">C2</div>
       <div class="section-heading section-heading--center reveal">
         <p class="constellation-label"><span>C2</span> Your Art</p>
         <h2>Fox's <em>Mooncall</em></h2>
-        <p>When you draw, you do more than place lines on a page. You create something that feels like you: expressive, thoughtful, detailed, and full of life.</p>
       </div>
 
       <!-- Replace any .drawing-placeholder with:
@@ -266,7 +283,6 @@
 
     <!-- C3 — KANJI -------------------------------------------------- -->
     <section class="constellation-section dark-section kanji-section" id="c3" data-constellation-section="3">
-      <div class="section-watermark" aria-hidden="true">C3</div>
 
       <div class="kanji-visual reveal" aria-hidden="true">
         <div class="kanji-card">
@@ -279,25 +295,22 @@
         <h2>彩 — <em>Aya / Sai</em></h2>
         <p class="kanji-subtitle">Color, brilliance, and artistic expression.</p>
         <p class="opening-copy">This kanji reminds me of you because your creativity gives color to everything around you. Through your drawings, your voice, your confidence and the way you see the world, you leave something vivid and beautiful behind. You do not just exist in a world of colors — you create your own.</p>
-        <div class="kanji-quote"><span class="iconify" data-icon="ph:paint-brush-broad-light"></span><strong>You create your own colors.</strong></div>
       </div>
     </section>
 
     <!-- C4 — QUALITIES ---------------------------------------------- -->
     <section class="constellation-section light-section qualities-section" id="c4" data-constellation-section="4">
-      <div class="section-watermark" aria-hidden="true">C4</div>
       <div class="section-heading reveal">
         <p class="constellation-label"><span>C4</span> What I Admire About You</p>
         <h2>Sakura <em>Channeling</em></h2>
-        <p>Six qualities, like sakura energy gathered into different points of the same beautiful constellation.</p>
       </div>
       <div class="quality-grid">
-        <article class="quality-card reveal"><span class="quality-icon"><span class="iconify" data-icon="ph:paint-brush-broad-light"></span></span><b>01</b><h3>Creative</h3><p>You turn imagination into something people can see and feel.</p></article>
-        <article class="quality-card reveal reveal--delay-1"><span class="quality-icon"><span class="iconify" data-icon="ph:heart-light"></span></span><b>02</b><h3>Caring</h3><p>You may keep your circle small, but you truly care about the people who matter to you.</p></article>
-        <article class="quality-card reveal reveal--delay-2"><span class="quality-icon"><span class="iconify" data-icon="ph:star-four-light"></span></span><b>03</b><h3>Confident</h3><p>You have a presence that feels calm, strong, and sure of itself.</p></article>
-        <article class="quality-card reveal"><span class="quality-icon"><img src="assets/img/electro.webp" alt=""></span><b>04</b><h3>Quietly Strong</h3><p>You do not need to be loud to be unforgettable.</p></article>
-        <article class="quality-card reveal reveal--delay-1"><span class="quality-icon"><span class="iconify" data-icon="ph:book-open-text-light"></span></span><b>05</b><h3>Curious</h3><p>You love learning, growing, and discovering more about the world.</p></article>
-        <article class="quality-card reveal reveal--delay-2"><span class="quality-icon"><span class="iconify" data-icon="ph:flower-lotus-light"></span></span><b>06</b><h3>Loyal</h3><p>When someone matters to you, you make them feel it.</p></article>
+        <article class="quality-card reveal"><span class="quality-icon"><span class="iconify" data-icon="ph:paint-brush-broad-light"></span></span><b>01</b><h3>Creative</h3></article>
+        <article class="quality-card reveal reveal--delay-1"><span class="quality-icon"><span class="iconify" data-icon="ph:heart-light"></span></span><b>02</b><h3>Caring</h3></article>
+        <article class="quality-card reveal reveal--delay-2"><span class="quality-icon"><span class="iconify" data-icon="ph:star-four-light"></span></span><b>03</b><h3>Confident</h3></article>
+        <article class="quality-card reveal"><span class="quality-icon"><img src="assets/img/electro.webp" alt=""></span><b>04</b><h3>Quietly Strong</h3></article>
+        <article class="quality-card reveal reveal--delay-1"><span class="quality-icon"><span class="iconify" data-icon="ph:book-open-text-light"></span></span><b>05</b><h3>Curious</h3></article>
+        <article class="quality-card reveal reveal--delay-2"><span class="quality-icon"><span class="iconify" data-icon="ph:flower-lotus-light"></span></span><b>06</b><h3>Loyal</h3></article>
       </div>
     </section>
 
@@ -305,26 +318,28 @@
     <section class="constellation-section dark-section inspiration-section" id="c5" data-constellation-section="5">
       <div class="inspiration-section__image" aria-hidden="true"></div>
       <div class="inspiration-section__veil"></div>
-      <div class="section-watermark" aria-hidden="true">C5</div>
       <div class="section-heading reveal">
         <p class="constellation-label constellation-label--light"><span>C5</span> Your Inspirations</p>
         <h2>Mischievous <em>Teasing</em></h2>
-        <p>Two different sparks that echo something in you — elegance and mystery on one side, color and fearless expression on the other.</p>
       </div>
 
       <div class="muse-grid">
         <article class="muse-card muse-card--yae reveal">
           <div class="muse-card__top"><span>Main inspiration</span><span>01</span></div>
-          <div class="muse-card__symbol" aria-hidden="true"><i></i><span class="iconify" data-icon="mingcute:fox-line"></span></div>
+          <div class="muse-card__symbol">
+            <i aria-hidden="true"></i>
+            <img class="muse-character-image muse-character-image--yae" src="assets/characters/yae-miko.jpg" alt="Yae Miko">
+          </div>
           <h3>Yae Miko</h3>
-          <p>Yae Miko has that calm, elegant, and unforgettable presence. That is the kind of energy I see in your universe too: soft, creative, confident, mysterious, and filled with a beautiful Electro glow.</p>
           <div class="trait-list"><span>Elegant</span><span>Mysterious</span><span>Confident</span><span>Electro</span><span>Sakura</span><span>Kitsune</span></div>
         </article>
         <article class="muse-card muse-card--marin reveal reveal--delay">
           <div class="muse-card__top"><span>A colorful spark</span><span>02</span></div>
-          <div class="muse-card__symbol" aria-hidden="true"><i></i><span class="iconify" data-icon="ph:sun-horizon-light"></span></div>
+          <div class="muse-card__symbol">
+            <i aria-hidden="true"></i>
+            <img class="muse-character-image muse-character-image--marin" src="assets/characters/My Dress Up Darling's Marin Kitagawa Gets Her Own___.jpg" alt="Marin Kitagawa">
+          </div>
           <h3>Marin Kitagawa</h3>
-          <p>Marin's world is full of color, expression, and confidence. She reminds me of the way you can turn what you love into something bright, personal, and alive.</p>
           <div class="trait-list"><span>Creative</span><span>Expressive</span><span>Colorful</span><span>Passionate</span><span>Confident</span><span>Girly</span></div>
         </article>
       </div>
@@ -333,24 +348,19 @@
     <!-- C6 — FINAL -------------------------------------------------- -->
     <section class="constellation-section final-section" id="c6" data-constellation-section="6">
       <div class="final-section__nebula" aria-hidden="true"></div>
-      <div class="section-watermark" aria-hidden="true">C6</div>
       <div class="final-heading reveal">
         <p class="constellation-label constellation-label--light"><span>C6</span> Final Constellation</p>
         <h2>Forbidden Art:<br><em>Daisesshou</em></h2>
-        <p>The last star closes the constellation with a quiet glow before one final letter, kept only for you.</p>
       </div>
 
       <div class="final-wish reveal">
-        <span class="final-wish__star" aria-hidden="true"><img src="assets/img/electro.webp" alt=""></span>
-        <p class="thunder-line">Celine, you do not need anyone to strike.<br><em>You are a thunder yourself.</em></p>
-        <h2>Celine, you do not need to shine like everyone else.</h2>
-        <h3>You already have your own light.</h3>
-        <a class="secondary-button" href="#c0" data-constellation="0"><span class="iconify" data-icon="ph:arrow-up"></span><span>Return to the constellation</span></a>
+        <h2>Celine, you don't need anyone to strike.</h2>
+        <h3>You are a thunder yourself.</h3>
       </div>
     </section>
 
     <!-- PERSONAL LETTER --------------------------------------------- -->
-    <section class="letter-section" aria-label="A personal letter for Celine">
+    <section class="letter-section" id="letter" aria-label="A personal letter for Celine">
       <article class="letter-card reveal">
         <span class="letter-card__corner letter-card__corner--tl"></span><span class="letter-card__corner letter-card__corner--tr"></span>
         <span class="letter-card__corner letter-card__corner--bl"></span><span class="letter-card__corner letter-card__corner--br"></span>
@@ -365,6 +375,7 @@
         </div>
         <footer><strong>✦ Sovann</strong></footer>
       </article>
+      <a class="secondary-button letter-return-button" href="#c0" data-constellation="0"><span class="iconify" data-icon="ph:arrow-up"></span><span>Return to the constellation</span></a>
     </section>
   </main>
 
