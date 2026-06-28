@@ -785,40 +785,12 @@ body.is-unlocking .webp-star-node--1 {
 .energy-layout { position: relative; z-index: 2; display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(55px,7vw,105px); align-items: center; }
 .energy-copy { max-width: 575px; }
 .energy-copy > p:not(.opening-copy) { color: var(--muted); font-size: .9rem; }
-.energy-traits {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 27px;
-}
-.energy-traits span {
-  padding: 9px 14px;
-  border: 1px solid rgba(143,92,255,.2);
-  border-radius: 999px;
-  color: var(--violet);
-  background: rgba(255,253,249,.66);
-  box-shadow: 0 13px 28px rgba(91,55,74,.08), inset 0 1px rgba(255,255,255,.72);
-  font-family: var(--fantasy);
-  font-size: .52rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-.soft-quote { display: flex; align-items: center; gap: 15px; margin-top: 33px; }
-.soft-quote > .iconify { box-sizing: content-box; width: 22px; height: 22px; padding: 11px; border: 1px solid var(--gold-line); border-radius: 50%; color: var(--electro); }
-.soft-quote p { margin: 0; color: #7c6270; font-family: var(--display); font-size: 1.06rem; line-height: 1.25; }
-.soft-quote strong { color: var(--violet); font-size: 1.24rem; font-weight: 600; }
 .electro-card { position: relative; min-height: 520px; overflow: hidden; padding: 31px 34px; border: 1px solid rgba(240,217,168,.42); border-radius: 8px 75px 8px 75px; color: white; background: radial-gradient(circle at 52% 46%,rgba(246,166,200,.2),transparent 18%),radial-gradient(circle at 65% 28%,rgba(229,198,255,.36),transparent 27%),linear-gradient(145deg,#b25691,#713b99 50%,#2b184c); box-shadow: 0 34px 82px rgba(67,31,89,.3),0 0 50px rgba(143,92,255,.13),inset 0 0 0 9px rgba(255,255,255,.035); }
 .electro-card::before { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(240,217,168,.22); border-radius: 4px 63px 4px 63px; }
 .electro-emblem { position: absolute; top: 47%; left: 50%; display: grid; place-items: center; width: 270px; height: 270px; transform: translate(-50%,-50%); }
 .electro-emblem i { position: absolute; inset: 0; border: 1px solid rgba(255,255,255,.23); border-radius: 50%; box-shadow: 0 0 35px rgba(201,167,255,.15); animation: seal-pulse 4.5s ease-in-out infinite; }
 .electro-emblem i:nth-child(2) { inset: 31px; border-style: dashed; opacity: .7; animation: orbit-turn 24s linear infinite; }
 .electro-emblem img { position: relative; z-index: 2; width: 115px; height: 115px; filter: brightness(1.23) saturate(.8); }
-.electro-card__bottom { position: absolute; right: 34px; bottom: 31px; left: 34px; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; padding-top: 21px; border-top: 1px solid rgba(255,255,255,.18); }
-.electro-card__bottom div { display: flex; flex-direction: column; }
-.electro-card__bottom div:last-child { text-align: right; }
-.electro-card__bottom small { font-family: var(--fantasy); font-size: .48rem; letter-spacing: .14em; opacity: .52; text-transform: uppercase; }
-.electro-card__bottom strong { font-family: var(--display); font-size: 1.75rem; font-weight: 500; line-height: 1.1; }
-.electro-card__bottom div:last-child strong { font-size: 1.3rem; }
 
 /* C2 --------------------------------------------------------------- */
 .art-section {
